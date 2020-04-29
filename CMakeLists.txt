@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.02)
 
 include(cmake/Hunter/init.cmake)
 
 project(jsonrpc-lean)
 
-option(BUILD_EXAMLPES "Build example" OFF)
+option(BUILD_EXAMPLES "Build example" OFF)
 
 hunter_add_package(RapidJSON)
 find_package(RapidJSON CONFIG REQUIRED)
@@ -22,7 +22,7 @@ include_directories(${RapidJSON_INCLUDE_DIR})
 add_library(jsonrpc-lean INTERFACE)
 jsonrpc_install(jsonrpc-lean)
 
-if(BUILD_EXAMLPES)
+if(BUILD_EXAMPLES)
   add_executable(testserver examples/testserver.cpp)
   add_executable(testclient examples/testclient.cpp)
   add_executable(base64 examples/base64.cpp)
