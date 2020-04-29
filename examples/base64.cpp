@@ -24,7 +24,6 @@
 #include <fcntl.h>
 #include <iostream>
 #include <memory>
-#include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
 

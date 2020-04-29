@@ -18,8 +18,6 @@
 // Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
 #include "../include/jsonrpc-lean/client.h"
-#include "../include/jsonrpc-lean/fault.h"
-#include "../include/jsonrpc-lean/jsonformathandler.h"
 
 #include <cstring>
 #include <iostream>

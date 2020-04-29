@@ -1,0 +1,21 @@
+include(GNUInstallDirs)
+
+function(jsonrpc_install targets)
+    install(TARGETS ${targets} EXPORT jsonrpc-leanConfig
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+        INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+        PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+        FRAMEWORK DESTINATION ${CMAKE_INSTALL_PREFIX}
+    )
+endfunction()
+
+install(
+    DIRECTORY ${CMAKE_SOURCE_DIR}/include/jsonrpc-lean
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
+install(
+    EXPORT jsonrpc-leanConfig
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/jsonrpc-lean
+)
